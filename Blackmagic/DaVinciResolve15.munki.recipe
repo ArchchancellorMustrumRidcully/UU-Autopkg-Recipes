@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the most recent version of DaVinci Resolve 14 and imports into Munki.
+    <string>Downloads the most recent version of DaVinci Resolve 15 and imports into Munki.
 
 Please see directions in the download recipe about additional Input variables required for this
 recipe.
