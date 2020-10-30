@@ -29,7 +29,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>DaVinciResolve14</string>
+        <string>DaVinciResolve15</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/%NAME%</string>
         <key>pkginfo</key>
@@ -41,7 +41,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
             <key>description</key>
             <string>This software installs the free version of DaVinci Resolve 15 Technical support is available via the Blackmagic Design community forums.</string>
             <key>display_name</key>
-            <string>DaVinci Resolve 14</string>
+            <string>DaVinci Resolve 15</string>
             <key>minimum_os_version</key>
             <string>10.11.6</string>
             <key>name</key>
