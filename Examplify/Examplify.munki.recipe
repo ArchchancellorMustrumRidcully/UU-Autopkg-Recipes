@@ -13,7 +13,7 @@
 		<key>RestartAction</key>
 		<string>RequireRestart</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/%NAME%</string>
+		<string>examsoft/%NAME%</string>
 		<key>NAME</key>
 		<string>Examplify</string>
 		<key>pkginfo</key>
@@ -29,15 +29,66 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> Examplify from ExamSoft provides the secure, offline testing platform your educational program needs to keep the exam environment secure and stable.</string>
+			<string>&lt;!doctype html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Examplify&lt;/title&gt;
+        &lt;/head&gt;
+        
+        &lt;body&gt;
+        &lt;img src=&quot;https://munkirepo.husson.edu/images/examplify.png&quot;&gt;&lt;br&gt;
+        
+        
+        &lt;p&gt;Ready to bring your testing process into the 21st century? Examplify from ExamSoft provides the secure, offline testing platform your educational program needs to keep the exam environment secure and stable.&lt;/p&gt; &lt;br&gt;
+        
+        &lt;h1&gt;Key Benifits&lt;/h1&gt;
+        &lt;ul&gt;
+        &lt;li&gt;Available on most device types: Mac/PC laptops, iPads, and Surface Pros.&lt;/li&gt;
+        &lt;li&gt;A completely locked down testing application keeps students off the Internet or other programs on their device.&lt;/li&gt;
+        &lt;li&gt;Stop worrying about broadband issues. Examplify exams are delivered offline, with no need for Wi-Fi connectivity.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br&gt;
+        &lt;h1&gt;Examplify in 3 Easy Steps:&lt;/h1&gt; &lt;br&gt;&lt;br&gt;
+        &lt;h1&gt;1. Lockdown student devices:&lt;/h1&gt;
+        &lt;p&gt;Examplify locks down the entire exam process. Students are not able to access anything other than the exam while it&apos;s in session.&lt;/p&gt;&lt;br&gt;
+        
+        &lt;h1&gt;2. Enjoy robust exam features:&lt;/h1&gt;
+        &lt;p&gt;
+        If permitted, exam takers have access to robust features, including alarms, question flagging,
+        a scientific calculator, and highlighting capabilities.&lt;/p&gt;&lt;br&gt;
+        &lt;h1&gt;3. Picture-perfect attachments:&lt;/h1&gt;
+        &lt;p&gt;
+        Images, PDFs, and even video attachments never looked so good! It&apos;s easy for students
+        to zoom in and out, rotate, or manipulate graphics how they would like.&lt;/p&gt;
+        &lt;/body&gt;
+&lt;/html&gt;</string>
 			<key>developer</key>
 				<string>ExamSoft</string>
+			<key>category</key>
+				<string>Education</string>
 			<key>display_name</key>
 			<string>Examplify</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
-			<true/>
+			<false/>
+			<key>postuninstall_script</key>
+			<string>#!/bin/sh
+
+rm -r /Library/LaunchAgents/ES.Examplify.plist
+
+rm -r /Library/Application\ Support/Examplify
+
+rm -r /Library/LaunchDaemons/com.examsoft.ExamplifyService.plist
+
+rm -r /Applications/Examplify.app
+
+pkgutil --forget ES.Examplify</string>
+			<key>preuninstall_script</key>
+			<string>#!/bin/sh
+launchctl unload /Library/LaunchDaemons/com.examsoft.ExamplifyService.plist
+exit 0</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
